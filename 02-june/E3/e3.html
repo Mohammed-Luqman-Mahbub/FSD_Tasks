@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E3</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <img src="https://wallpapercave.com/w/wp5170574.jpg" alt="Image" style="width:100%; height:auto;">
+    <img src="https://wallpapercave.com/w/wp5170572.jpg" alt="Image" style="width:100%; height:auto;">
+    <img src="https://wallpapercave.com/w/wp5170576.jpg" alt="Image" style="width:100%; height:auto;">
+    <img src="https://wallpapercave.com/w/wp5170577.jpg" alt="Image" style="width:100%; height:auto;">
+    <img src="https://wallpapercave.com/w/wp5170578.jpg" alt="Image" style="width:100%; height:auto;">
+    <img src="https://wallpapercave.com/w/wp5170579.jpg" alt="Image" style="width:100%; height:auto;">
+    <img src="https://wallpapercave.com/w/wp5170570.jpg" alt="Image" style="width:100%; height:auto;">
+    <img src="https://wallpapercave.com/w/wp5170571.jpg" alt="Image" style="width:100%; height:auto;">
+    </div>
+</body>
+</html>

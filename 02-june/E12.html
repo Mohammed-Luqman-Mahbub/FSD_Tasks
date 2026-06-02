@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E12</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            padding: 210px;
+            align-items: center;
+        }
+        #main {
+            width: 100px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(0, 0, 0);
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 10px;
+            
+        }
+        #red, #yellow, #green {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            color: rgb(255, 255, 255);
+            margin: 8px 0;
+            background-color: rgb(255, 255, 255);
+        }
+        #red { animation: redAnim 6s linear infinite; }
+        #yellow { animation: yellowAnim 6s linear infinite; }
+        #green { animation: greenAnim 6s linear infinite; }
+
+        @keyframes redAnim {
+            0%, 33%   { background-color: rgb(255, 0, 0); }
+            33.0001%, 100% { background-color: rgb(255, 233, 233); }
+        }
+        @keyframes yellowAnim {
+            0%, 33%   { background-color: rgb(251, 254, 226); }
+            33.0001%, 66% { background-color: rgb(255, 255, 0); }
+            66.0001%, 100% { background-color: rgb(250, 252, 228); }
+        }
+        @keyframes greenAnim {
+            0%, 66%   { background-color: rgb(217, 250, 207); }
+            66.0001%, 100% { background-color: rgb(0, 255, 0); }
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="red"></div>
+        <div id="yellow"></div>
+        <div id="green"></div>
+    </div>
+</body>
+</html>

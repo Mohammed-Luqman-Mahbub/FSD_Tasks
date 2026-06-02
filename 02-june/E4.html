@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E4</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        header {
+            background: #595959;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .layout {
+            display: flex;
+            min-height: calc(100vh - 100px);
+        }
+        .sidebar {
+            background: #fff;
+            width: 250px;
+            padding: 20px;
+            border-right: 1px solid #ddd; 
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background: #fff;
+        }
+        @media (max-width: 768px) {
+            .layout {
+                flex-direction: column;
+            }
+            .sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Website Header</h1>
+        <p>Site navigation and branding</p>
+    </header>
+    <div class="layout">
+        <aside class="sidebar">
+            <h2>Sidebar</h2>
+            <ul>
+                <li>Navigation Item 1</li>
+                <li>Navigation Item 2</li>
+                <li>Navigation Item 3</li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <h2>Main Content</h2>
+            <p>This is the main content area. Add your content here.</p>
+        </main>
+    </div>
+</body>
+</html>

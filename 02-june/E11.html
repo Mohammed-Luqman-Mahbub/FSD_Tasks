@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E11</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: left;
+            padding: 210px;
+            align-items: left  ;
+        }
+        @keyframes animateText {
+            0% {
+                transform: translateX(-200px) translateY(-200px) rotate(0deg);
+            }
+            25% {
+                transform: translateX(500px) translateY(500px) rotate(90deg);
+            }
+            50% {
+                transform: translateX(1000px) translateY(-200px) rotate(180deg);
+            }
+            75%{
+                transform: translateX(500px) translateY(500px) rotate(-270deg);
+            }
+            100% {
+                transform: translateX(-200px) translateY(-200px) rotate(0deg);
+            }
+        }
+        h1 {
+            animation: animateText 2s infinite;
+            animation-iteration-count: infinite;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Welcome</h1>
+</body>
+</html>

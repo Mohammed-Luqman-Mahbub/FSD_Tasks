@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E10</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            padding: 210px;
+            align-items: center;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(255, 0, 0);
+            border: 2px solid rgb(0, 0, 0);
+            /* border-bottom: 2px solid rgb(0, 0, 0); */
+            border-radius: 50%;
+            animation: rotate 2s ease-in-out infinite;
+            animation-iteration-count: infinite;
+        }
+        @keyframes rotate{
+            0%{
+             transform:translateX(-400px);
+               
+            }
+            50%{
+                transform:translateX(400px);
+            }
+            100%{
+                transform:translateX(-400px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+    </div>
+</body>
+</html>
