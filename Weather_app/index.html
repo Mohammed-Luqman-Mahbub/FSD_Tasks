@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App </title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script>
+        async function display() {
+            event.preventDefault();
+            const city = document.getElementById("city").value;
+            const api = "01de8be3230801e820f346ba0b53dadf";
+
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=metric`);
+            const data = await response.json();
+
+            const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${api}&units=metric`);
+            const forecastData = await forecastResponse.json();
+
+            const details = document.getElementById("here");
+
+            let forecastHTML = "";
+            for (let i = 0; i < forecastData.list.length; i += 8) {
+                forecastHTML += `
+                <div>
+                    <h3>${forecastData.list[i].dt_txt.split(" ")[0]}</h3>
+                    <p>${forecastData.list[i].main.temp}°C</p>
+                    <p>${forecastData.list[i].weather[0].main}</p>
+                </div><br>
+                `;
+            }
+
+            details.innerHTML = `
+            <h1>${data.main.temp}°C</h1>
+            <h1>${data.weather[0].main}</h1>
+
+            <h2>5 Day Forecast</h2>
+            ${forecastHTML}
+            `;
+    }
+
+        // async function display() {
+        //     event.preventDefault();
+        //     const city=document.getElementById("city").value;
+        //     const api="01de8be3230801e820f346ba0b53dadf"
+        //     const response=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=metric`);
+        //     const data=await response.json();
+        //     const details =document.getElementById("here");
+        //     details.innerHTML= `
+        //         <h1>${data.main.temp}</h1>
+        //         <h1>${data.weather[0].main}</h1>
+        //     `;
+        // }   
+    </script>
+</head>
+<body class="bg-info">
+    <div  class="border-1" style=" align-items: center; justify-content: center; text-align: center; border: 2px; border-color:black;">
+        <h1 class="text-warning m-5"> Weather </h1>
+        <form onsubmit="display()">
+            <input style="height: 40px;" class="" id="city" type="text">
+            <button class="btn btn-warning" type="submit" id value="Search"> Search</button>
+        </form>
+        <div id="here"></div>
+    </div>
+</body>
+</html>
